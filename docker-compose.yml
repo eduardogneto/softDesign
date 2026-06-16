@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: aquisicaocredito-db
+    environment:
+      POSTGRES_DB: aquisicaocredito
+      POSTGRES_USER: aquisicaocredito
+      POSTGRES_PASSWORD: aquisicaocredito
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
